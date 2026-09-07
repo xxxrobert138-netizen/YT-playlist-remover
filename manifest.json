@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Clean Video Opener",
+  "version": "1.0",
+  "description": "Opens YouTube playlist videos as standalone videos without the playlist UI.",
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*://*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
