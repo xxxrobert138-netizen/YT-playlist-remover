@@ -1,19 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Clean Video Opener",
+  "name": "YouTube Standalone Opener",
   "version": "1.0",
-  "description": "Opens YouTube playlist videos as standalone videos without the playlist UI.",
+  "description": "Automatically opens YouTube playlist videos as standalone videos.",
   "icons": {
     "128": "icon.png"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://youtube.com/watch/*",
-        "https://youtube.com/watch/*"
-      ],
-      "js": ["content.js"],
-      "run_at": "document_start"
-    }
-  ]
+  "permissions": [
+    "webNavigation",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
